@@ -4,4 +4,5 @@ export class Car {
     model: string;
     regPlate: string;
     active: boolean;
+    image: string;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Car } from 'src/app/models/Car';
 
+
 @Component({
   selector: 'app-car-detail',
   templateUrl: './car-detail.component.html',
@@ -8,6 +9,9 @@ import { Car } from 'src/app/models/Car';
 })
 export class CarDetailComponent implements OnInit {
   @Input() car: Car;
+
+  imageToShow: any;
+  isImageLoading: boolean;
 
   constructor() { }
 

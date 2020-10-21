@@ -4,7 +4,7 @@ li {
 
 .navbar {
     background-color: var(--off-white);
-    opacity: 0.6;
+    opacity: 0.9;
     position: sticky;
     top: 0px;
     width: 100%;
