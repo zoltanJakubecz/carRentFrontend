@@ -1,7 +1,7 @@
 <div class="col mb-4">
     <div class="card" style="width: 23rem; height: 26rem;">
       <div style="height: 20rem;">
-        <img [src]= "car.image" class="card-img-top" alt="...">
+        <img [src]= "car.image" class="card-img-top" alt="..." style="max-height: 17rem;">
       </div>
         <div class="card-body">
           <h5 class="card-title">{{ car.brand }}</h5>
@@ -20,7 +20,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <p>Hello, World!</p>
+    <p>{{ car.model }}</p>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
