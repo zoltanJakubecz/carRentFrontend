@@ -1,3 +1,5 @@
+import { Rent } from './Rent'
+
 export class Car {
     id: number;
     brand: string;
@@ -5,4 +7,5 @@ export class Car {
     regPlate: string;
     active: boolean;
     image: string;
+    rents: Rent[];
 }
