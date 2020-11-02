@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Car } from 'src/app/models/Car';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CarService } from 'src/app/services/car.service';
 
 
 
@@ -16,7 +17,7 @@ export class CarDetailComponent implements OnInit {
   imageToShow: any;
   isImageLoading: boolean;
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) { 
+  constructor(config: NgbModalConfig, private modalService: NgbModal, private carService: CarService) { 
     config.backdrop = 'static';
     config.keyboard = false;
   }
