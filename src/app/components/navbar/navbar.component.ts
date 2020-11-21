@@ -15,8 +15,13 @@ export class NavbarComponent implements OnInit {
   toCars(){
     document.getElementById("carList").scrollIntoView({behavior:"smooth"});
   }
+  
   toHome(){
     document.getElementById("home").scrollIntoView({behavior:"smooth"});
+  }
+
+  toContacts(){
+    document.getElementById("contacts").scrollIntoView({behavior:"smooth"});
   }
 
 }
