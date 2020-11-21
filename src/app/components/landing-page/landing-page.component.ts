@@ -10,6 +10,10 @@ export class LandingPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+  toCars(){
+    document.getElementById("carList").scrollIntoView({behavior:"smooth"});
   }
 
 }
