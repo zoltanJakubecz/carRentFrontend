@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LandingPageComponent,
     NavbarComponent,
     CarsComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
