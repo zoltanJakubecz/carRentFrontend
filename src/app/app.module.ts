@@ -9,7 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
