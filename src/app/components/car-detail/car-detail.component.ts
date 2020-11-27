@@ -17,7 +17,7 @@ export class CarDetailComponent implements OnInit {
   imageToShow: any;
   isImageLoading: boolean;
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private carService: CarService) { 
+  constructor(config: NgbModalConfig, private modalService: NgbModal, private carService: CarService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }

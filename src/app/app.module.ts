@@ -10,6 +10,14 @@ import { CarsComponent } from './components/cars/cars.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +26,21 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     NavbarComponent,
     CarsComponent,
     CarDetailComponent,
-    ContactsComponent
+    ContactsComponent,
+    RegisterDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

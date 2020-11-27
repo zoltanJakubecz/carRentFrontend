@@ -10,13 +10,19 @@
         </li>
         <li class="nav-item nav-link" (click)="toContacts()">Contact Us
         </li>
+
+
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="username" aria-label="Search">
         <input class="form-control mr-sm-2" type="password" placeholder="password" aria-label="Password">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        <button mat-raised-button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
       </form>
       <h4> or </h4>
-      <button class="btn btn-outline-primary my-2 my-sm-0">Register</button>
+        <li class="nav-item nav-link">
+              <button mat-raised-button class="btn btn-outline-primary my-2 my-sm-0" (click)="openDialog()">Register</button>
+        </li>
+
+
     </div>
   </nav>

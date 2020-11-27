@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {RegisterDialogComponent} from '../register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,21 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  toCars(){
-    document.getElementById("carList").scrollIntoView({behavior:"smooth"});
+  openDialog(){
+    this.dialog.open(RegisterDialogComponent);
   }
-  
+
+  toCars(){
+    document.getElementById('carList').scrollIntoView({behavior: 'smooth'});
+  }
+
   toHome(){
-    document.getElementById("home").scrollIntoView({behavior:"smooth"});
+    document.getElementById('home').scrollIntoView({behavior: 'smooth'});
   }
 
   toContacts(){
-    document.getElementById("contacts").scrollIntoView({behavior:"smooth"});
+    document.getElementById('contacts').scrollIntoView({behavior: 'smooth'});
   }
 
 }
