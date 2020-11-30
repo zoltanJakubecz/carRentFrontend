@@ -2,29 +2,31 @@
 
 
 .cover {
-	font-family: Lato;
+  font-family: Lato, sans-serif;
+  font-size: x-large;
 	color: white;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%), url('../../../static/imgs/auto4.jpg');
-    background-size: cover;
-	background-position: center;
-    display: table;
-    width: 100%;
-    box-shadow: inset 0 0 100px #000;
-} 
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%), url('../../../static/imgs/auto4.jpg');
+  background-size: cover;
+  background-position: center;
+  display: table;
+  width: 100%;
+  box-shadow: inset 0 0 100px #000;
+}
 
 .cname {
-    color: rgb(161, 206, 245);
-	font-family: Permanent Marker;
+  color: rgb(161, 206, 245);
+  font-family: Permanent Marker, sans-serif;
 	font-size: 6em;
-	letter-spacing: 0.1em;
+  padding-bottom: 0.5em;
+	letter-spacing: 0.15em;
 	font-weight: 700;
 }
 
 #content {
 	text-align: center;
-	padding-top: 15%;
-	padding-bottom: 40%;
-	text-shadow: 0px 4px 3px rgba(0,0,0.4),
-				 0px 8px 13px rgba(0,0,0.1),
-				 0px 18px 23px rgba(0,0,0.1);
+	padding-top: 20%;
+	padding-bottom: 35%;
+	text-shadow: 0 4px 3px #010101,
+				 0 8px 13px black,
+				 0 18px 23px black;
 }
