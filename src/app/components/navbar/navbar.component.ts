@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {RegisterDialogComponent} from '../register-dialog/register-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +9,27 @@ import {RegisterDialogComponent} from '../register-dialog/register-dialog.compon
 })
 export class NavbarComponent implements OnInit {
 
+  username: string;
+  password: string;
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   openDialog(){
-    this.dialog.open(RegisterDialogComponent);
+    const dialogRef = this.dialog.open(RegisterDialogComponent, {
+      height: '400px',
+      width: '600px',
+      data: {
+        name: this.username,
+        password: this.password,
+
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 
   toCars(){
