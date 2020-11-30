@@ -1,4 +1,4 @@
-import { Rent } from './Rent'
+import { Rent } from './Rent';
 
 export class Car {
     id: number;

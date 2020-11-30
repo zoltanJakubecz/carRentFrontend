@@ -1,5 +1,5 @@
 export class Rent {
-    car_id: String;
-    rentFrom: String;
-    rentTo: String;
+    carId: string;
+    rentFrom: string;
+    rentTo: string;
 }
