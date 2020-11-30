@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
 
   username: string;
   password: string;
+  passwordAgain: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,6 +25,7 @@ export class NavbarComponent implements OnInit {
       data: {
         name: this.username,
         password: this.password,
+        passwordAgain: this.passwordAgain
 
       }
     });
