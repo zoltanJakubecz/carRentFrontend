@@ -4,6 +4,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 export interface DialogData {
   name: string;
   password: string;
+  passwordAgain: string;
 }
 
 @Component({
@@ -16,6 +17,7 @@ export class RegisterDialogComponent implements OnInit {
 
   hide = true;
   password: string;
+  passwordAgain: string;
 
   constructor(public dialogRef: MatDialogRef<RegisterDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
