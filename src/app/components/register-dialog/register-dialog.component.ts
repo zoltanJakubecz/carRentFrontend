@@ -16,8 +16,7 @@ export interface DialogData {
 export class RegisterDialogComponent implements OnInit {
 
   hide = true;
-  password: string;
-  passwordAgain: string;
+
 
   constructor(public dialogRef: MatDialogRef<RegisterDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
