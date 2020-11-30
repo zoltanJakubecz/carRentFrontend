@@ -1,5 +1,7 @@
 <div class="example-container">
 
+  <h1>Registration form</h1>
+
     <mat-form-field class="example-full-width">
       <!--    <mat-label>username</mat-label>-->
       <input matInput [(ngModel)]="data.name"  placeholder="username">
@@ -23,9 +25,6 @@
       </button>
     </mat-form-field>
     <div mat-dialog-actions>
-      <button mat-button >No Thanks</button>
       <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
     </div>
-
-
 </div>
