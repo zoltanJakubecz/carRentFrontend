@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
-  private usersUrl: string;
+  private readonly usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/users';
+    this.usersUrl = 'http://localhost:8091/';
   }
 
   public findAll(): Observable<User[]> {
