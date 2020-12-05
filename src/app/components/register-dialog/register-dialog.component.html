@@ -3,12 +3,18 @@
   <h1>Registration form</h1>
 
     <mat-form-field class="example-full-width">
-      <!--    <mat-label>username</mat-label>-->
+<!--          <mat-label>username</mat-label>-->
       <input matInput [(ngModel)]="data.name"  placeholder="username">
     </mat-form-field>
 
     <br />
 
+  <mat-form-field class="example-full-width">
+    <mat-label>email</mat-label>
+    <input matInput [(ngModel)]="data.email"  placeholder="email@email.com" required>
+  </mat-form-field>
+
+  <br />
     <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
       <input matInput [(ngModel)]="data.password" [type]="hide ? 'password' : 'text'">

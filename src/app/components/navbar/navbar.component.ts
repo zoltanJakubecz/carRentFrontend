@@ -23,7 +23,6 @@ export class NavbarComponent implements OnInit {
 
   openDialog(){
     const dialogRef = this.dialog.open(RegisterDialogComponent, {
-
       data: {
         name: this.username,
         email: this.email,
@@ -31,10 +30,12 @@ export class NavbarComponent implements OnInit {
         passwordAgain: this.passwordAgain
       }
     });
+
     dialogRef.afterClosed().subscribe(result => {
       if (result){
         this.userService.register({
           firstName: result.name,
+          email: result.email,
           passwordPlain: result.password,
           passwordPlainCheck: result.passwordAgain
         }).subscribe();
