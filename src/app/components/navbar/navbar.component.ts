@@ -11,23 +11,18 @@ import { UserService } from '../../services/user.service';
 
 export class NavbarComponent implements OnInit {
 
-  username: string;
-  email: string;
-  password: string;
-  passwordAgain: string;
-
-  constructor(public dialog: MatDialog, private userService: UserService) { }
+  constructor( public dialog: MatDialog, private userService: UserService ) {}
 
   ngOnInit(): void {
   }
 
   openDialog(){
-    const dialogRef = this.dialog.open(RegisterDialogComponent, {
+    const dialogRef = this.dialog.open( RegisterDialogComponent, {
       data: {
-        name: this.username,
-        email: this.email,
-        password: this.password,
-        passwordAgain: this.passwordAgain
+        firstName: '',
+        email: '',
+        passwordPlain: '',
+        passwordPlainCheck: ''
       }
     });
 
@@ -46,15 +41,15 @@ export class NavbarComponent implements OnInit {
   }
 
   toCars(){
-    document.getElementById('carList').scrollIntoView({behavior: 'smooth'});
+    document.getElementById('carList').scrollIntoView({ behavior: 'smooth' });
   }
 
   toHome(){
-    document.getElementById('home').scrollIntoView({behavior: 'smooth'});
+    document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
   }
 
   toContacts(){
-    document.getElementById('contacts').scrollIntoView({behavior: 'smooth'});
+    document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
   }
 
 }
