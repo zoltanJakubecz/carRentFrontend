@@ -31,7 +31,7 @@
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-    <div mat-dialog-actions>
+    <div mat-dialog-actions align="end">
       <button mat-button [mat-dialog-close]="data" [disabled]="data.firstName === '' || data.email === '' ||
                                                                 data.passwordPlain === '' ||
                                                                 data.passwordPlain != data.passwordPlainCheck">Ok</button>
