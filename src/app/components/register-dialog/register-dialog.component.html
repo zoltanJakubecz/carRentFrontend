@@ -1,23 +1,24 @@
 <div class="example-container">
 
-  <h1>Registration form</h1>
+  <h1 mat-dialog-title>Registration form</h1>
 
     <mat-form-field class="example-full-width">
 <!--          <mat-label>username</mat-label>-->
-      <input matInput [(ngModel)]="data.name"  placeholder="username">
+      <input matInput [(ngModel)]="data.firstName"  placeholder="username">
     </mat-form-field>
 
     <br />
 
   <mat-form-field class="example-full-width">
     <mat-label>email</mat-label>
-    <input matInput [(ngModel)]="data.email"  placeholder="email@email.com" required>
+    <input matInput [(ngModel)]="data.email"  required>
   </mat-form-field>
+
 
   <br />
     <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
-      <input matInput [(ngModel)]="data.password" [type]="hide ? 'password' : 'text'">
+      <input matInput [(ngModel)]="data.passwordPlain" [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
@@ -25,12 +26,15 @@
     <br />
     <mat-form-field appearance="fill">
       <mat-label>Enter your password again</mat-label>
-      <input matInput [(ngModel)]="data.passwordAgain" [type]="hide ? 'password' : 'text'">
+      <input matInput [(ngModel)]="data.passwordPlainCheck" [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
     <div mat-dialog-actions>
-      <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+      <button mat-button [mat-dialog-close]="data" [disabled]="data.firstName === '' || data.email === '' ||
+                                                                data.passwordPlain === '' ||
+                                                                data.passwordPlain != data.passwordPlainCheck">Ok</button>
+      <button mat-button mat-dialog-close>Cancel</button>
     </div>
 </div>
