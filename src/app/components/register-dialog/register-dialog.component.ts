@@ -1,12 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { User } from '../../models/User';
 
-export interface DialogData {
-  name: string;
-  email: string;
-  password: string;
-  passwordAgain: string;
-}
 
 @Component({
   selector: 'app-register-dialog',
@@ -18,9 +13,8 @@ export class RegisterDialogComponent implements OnInit {
 
   hide = true;
 
-
   constructor(public dialogRef: MatDialogRef<RegisterDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+              @Inject(MAT_DIALOG_DATA) public data: User) { }
 
   ngOnInit(): void {
   }
