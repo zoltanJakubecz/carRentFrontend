@@ -13,14 +13,14 @@ export class RegisterComponent{
   constructor( public dialog: MatDialog, private userService: UserService ) {}
 
   openDialog(){
-    console.log('Helly');
     const dialogRef = this.dialog.open( RegisterDialogComponent, {
       data: {
         firstName: '',
         email: '',
         passwordPlain: '',
         passwordPlainCheck: ''
-      }
+      },
+      disableClose: true
     });
 
 
