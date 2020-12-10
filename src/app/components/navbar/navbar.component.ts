@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
-import { UserService } from '../../services/user.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -11,33 +9,7 @@ import { UserService } from '../../services/user.service';
 
 export class NavbarComponent implements OnInit {
 
-  constructor( public dialog: MatDialog, private userService: UserService ) {}
-
   ngOnInit(): void {
-  }
-
-  openDialog(){
-    const dialogRef = this.dialog.open( RegisterDialogComponent, {
-      data: {
-        firstName: '',
-        email: '',
-        passwordPlain: '',
-        passwordPlainCheck: ''
-      }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result){
-        this.userService.register({
-          firstName: result.name,
-          email: result.email,
-          passwordPlain: result.password,
-          passwordPlainCheck: result.passwordAgain
-        }).subscribe();
-        console.log(`helly ${result}`);
-      }
-      console.log(result);
-    });
   }
 
   toCars(){

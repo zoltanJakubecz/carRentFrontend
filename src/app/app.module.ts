@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
+import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 
@@ -23,7 +24,8 @@ import { MaterialModule } from './material.module';
     CarsComponent,
     CarDetailComponent,
     ContactsComponent,
-    RegisterDialogComponent
+    RegisterDialogComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
