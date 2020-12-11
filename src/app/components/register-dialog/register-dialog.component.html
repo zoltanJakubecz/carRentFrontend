@@ -1,24 +1,31 @@
-<div class="example-container">
+<div class="example-container" [formGroup]="form">
 
-  <h1 mat-dialog-title>Registration form</h1>
+  <h1 mat-dialog-title>Registration Form</h1>
 
     <mat-form-field class="example-full-width">
 <!--          <mat-label>username</mat-label>-->
-      <input matInput [(ngModel)]="data.firstName"  placeholder="username">
+      <input matInput formControlName="firstName"  placeholder="First Name">
     </mat-form-field>
 
     <br />
 
   <mat-form-field class="example-full-width">
     <mat-label>email</mat-label>
-    <input matInput [(ngModel)]="data.email"  required>
+    <input matInput placeholder="pat@example.com" formControlName="email">
+    <mat-error *ngIf="form.get('email').hasError('email') && !form.get('email').hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="form.get('email').hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
 
 
   <br />
+  <mat-dialog-content [formGroup]="form">
     <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
-      <input matInput [(ngModel)]="data.passwordPlain" [type]="hide ? 'password' : 'text'">
+      <input matInput formControlName="passwordPlain" [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
@@ -26,15 +33,15 @@
     <br />
     <mat-form-field appearance="fill">
       <mat-label>Enter your password again</mat-label>
-      <input matInput [(ngModel)]="data.passwordPlainCheck" [type]="hide ? 'password' : 'text'">
+      <input matInput formControlName="passwordPlainCheck" [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
+
+  </mat-dialog-content>
     <div mat-dialog-actions align="end">
-      <button mat-button [mat-dialog-close]="data" [disabled]="data.firstName === '' || data.email === '' ||
-                                                                data.passwordPlain === '' ||
-                                                                data.passwordPlain != data.passwordPlainCheck">Ok</button>
-      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-raised-button color="primary" (click)="save()" [disabled]="!form.valid">Ok</button>
+      <button mat-button (click)="close()">Cancel</button>
     </div>
 </div>
