@@ -3,14 +3,22 @@
   <h1 mat-dialog-title>Registration Form</h1>
 
     <mat-form-field class="example-full-width">
-<!--          <mat-label>username</mat-label>-->
-      <input matInput formControlName="firstName"  placeholder="First Name">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName"  placeholder="Stuart">
       <mat-error *ngIf="form.get('firstName').hasError('required')">
         First name is <strong>required</strong>
       </mat-error>
     </mat-form-field>
 
-    <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName"  placeholder="Stewart">
+    <mat-error *ngIf="form.get('lastName').hasError('required')">
+      Last name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <br />
 
   <mat-form-field class="example-full-width">
     <mat-label>email</mat-label>
@@ -32,6 +40,9 @@
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
+      <mat-error *ngIf="form.get('passwordPlainCheck').hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
     <br />
     <mat-form-field appearance="fill">

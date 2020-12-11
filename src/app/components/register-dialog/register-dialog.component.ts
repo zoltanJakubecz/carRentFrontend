@@ -16,9 +16,10 @@ export class RegisterDialogComponent implements OnInit {
   hide = true;
 
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<RegisterDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) {firstName, email, passwordPlain, passwordPlainCheck}: User) {
+              @Inject(MAT_DIALOG_DATA) {firstName, lastName, email, passwordPlain, passwordPlainCheck}: User) {
     this.form = fb.group({
       firstName: [firstName, Validators.required],
+      lastName: [lastName, Validators.required],
       email: [email, [Validators.required, Validators.email]],
       passwordPlain: [passwordPlain, Validators.required],
       passwordPlainCheck: [passwordPlainCheck, Validators.required]
