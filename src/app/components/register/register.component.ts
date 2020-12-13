@@ -11,7 +11,7 @@ import {UserService} from '../../services/user.service';
 export class RegisterComponent{
 
 
-  constructor( public dialog: MatDialog ) {}
+  constructor( public dialog: MatDialog, private userService: UserService) {}
 
   openDialog(){
     const dialogRef = this.dialog.open( RegisterDialogComponent, {
@@ -20,25 +20,22 @@ export class RegisterComponent{
         title: 'Registration Form'
       },
       disableClose: true,
-      autoFocus: true,
+      autoFocus: false,
     });
 
     dialogRef.afterClosed().subscribe(
-      data => console.log('Dialog output:', data)
+      data => {
+        if (data) {
+          console.log('Dialog output:', data);
+          this.userService.register({
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            passwordPlain: data.passwordPlain,
+            passwordPlainCheck: data.passwordPlainCheck
+          }).subscribe();
+        }
+      }
     );
-
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (result){
-    //     this.userService.register({
-    //       firstName: result.name,
-    //       email: result.email,
-    //       passwordPlain: result.password,
-    //       passwordPlainCheck: result.passwordAgain
-    //     }).subscribe();
-    //     console.log(`helly ${result}`);
-    //   }
-    //   console.log(result);
-    // });
   }
 }
