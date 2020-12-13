@@ -31,7 +31,6 @@
     </mat-error>
   </mat-form-field>
 
-
   <br />
   <mat-dialog-content [formGroup]="form">
     <mat-form-field appearance="fill">
@@ -44,6 +43,7 @@
         Password is <strong>required</strong>
       </mat-error>
     </mat-form-field>
+
     <br />
     <mat-form-field appearance="fill">
       <mat-label>Enter your password again</mat-label>
@@ -54,14 +54,14 @@
       <mat-error *ngIf="form.get('passwordPlainCheck').hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
-      <mat-error *ngIf="form.get('passwordPlainCheck').hasError('notEqual')">
+      <mat-error *ngIf="form.get('passwordPlainCheck').hasError('notEqual') && !form.get('passwordPlainCheck').hasError('required')">
         Password and Confirm password does not match
       </mat-error>
     </mat-form-field>
 
   </mat-dialog-content>
-    <div mat-dialog-actions align="end">
-      <button mat-raised-button color="primary" (click)="save()" [disabled]="!form.valid">Ok</button>
-      <button mat-button (click)="close()">Cancel</button>
-    </div>
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="!form.valid">Ok</button>
+    <button mat-raised-button (click)="close()">Cancel</button>
+  </div>
 </div>
