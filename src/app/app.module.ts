@@ -15,7 +15,6 @@ import { RegisterDialogComponent } from './components/register-dialog/register-d
 import { RegisterComponent } from './components/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from './material.module';
-import { ValidateEqualModule } from 'ng-validate-equal';
 import {ConfirmEqualValidatorDirective} from './validators/confirm-equal-validator.directive';
 
 
@@ -39,8 +38,7 @@ import {ConfirmEqualValidatorDirective} from './validators/confirm-equal-validat
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule,
-    ValidateEqualModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
