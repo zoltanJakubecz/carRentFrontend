@@ -13,9 +13,10 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterDialogComponent } from './components/register-dialog/register-dialog.component';
 import { RegisterComponent } from './components/register/register.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
-import {ConfirmEqualValidatorDirective} from './validators/confirm-equal-validator.directive';
+import { ConfirmEqualValidatorDirective } from './validators/confirm-equal-validator.directive';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {ConfirmEqualValidatorDirective} from './validators/confirm-equal-validat
     ContactsComponent,
     RegisterDialogComponent,
     RegisterComponent,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
