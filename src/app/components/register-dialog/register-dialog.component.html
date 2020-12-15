@@ -21,7 +21,7 @@
   <br />
 
   <mat-form-field class="example-full-width">
-    <mat-label>email</mat-label>
+    <mat-label>Email</mat-label>
     <input matInput placeholder="pat@example.com" formControlName="email">
     <mat-error *ngIf="form.get('email').hasError('email') && !form.get('email').hasError('required')">
       Please enter a valid email address
@@ -32,9 +32,9 @@
   </mat-form-field>
 
   <br />
-  <mat-dialog-content [formGroup]="form">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your password</mat-label>
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
       <input matInput name="passwordPlain" formControlName="passwordPlain" [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -44,9 +44,8 @@
       </mat-error>
     </mat-form-field>
 
-    <br />
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your password again</mat-label>
+    <mat-form-field>
+      <mat-label>Confirm password</mat-label>
       <input matInput name="passwordPlainCheck" appConfirmEqualValidator="passwordPlain" formControlName="passwordPlainCheck" [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
