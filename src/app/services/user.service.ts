@@ -25,6 +25,7 @@ export class UserService {
   }
 
   public login(user: UserAuth){
-    console.log(user);
+    return this.http.post<User>(`${this.usersUrl}login`, user);
+    // console.log(user);
   }
 }

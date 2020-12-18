@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {strict} from 'assert';
 import {User} from '../../models/User';
 import {UserService} from '../../services/user.service';
 
@@ -10,8 +9,8 @@ import {UserService} from '../../services/user.service';
 })
 export class LoginComponent implements OnInit{
 
-  email: string;
-  password: string;
+  email = '';
+  password: '';
   user: User;
   hide = true;
 
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit{
     this.userService.login({
       email: this.email,
       passwordPlain: this.password
-    });
+    }).subscribe();
   }
 
 }

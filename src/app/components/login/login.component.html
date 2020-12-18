@@ -1,5 +1,5 @@
 <form class="form-inline my-2 my-lg-0">
   <input  class="form-control mr-sm-2" name="email" [(ngModel)]="email" placeholder="email">
-  <input class="form-control mr-sm-2" name="password" type="password" [(ngModel)]="password" placeholder="password" aria-label="Password" [type]="hide ? 'password' : 'text'">
-  <button mat-raised-button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="loginUser()">Login</button>
+  <input class="form-control mr-sm-2" name="password" type="password" [(ngModel)]="password" placeholder="password" [type]="hide ? 'password' : 'text'">
+  <button mat-raised-button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="loginUser()" [disabled]="email == ''">Login</button>
 </form>
